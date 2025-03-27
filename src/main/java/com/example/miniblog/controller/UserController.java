@@ -30,7 +30,7 @@ public class UserController {
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
             String token = userService.login(request);
-            return ResponseEntity.ok().body("Bearer" + token);
+            return ResponseEntity.ok().body("Bearer " + token);
         } catch(IllegalArgumentException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
